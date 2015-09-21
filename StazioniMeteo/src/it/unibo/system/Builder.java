@@ -52,7 +52,7 @@ public class Builder {
 			break;
 		case "Water":
 			testWTR = new WaterMonitor(name, coord, key);
-			stat = testGND;
+			stat = testWTR;
 
 			addWaterSensor() ;
 			break;
@@ -85,6 +85,7 @@ public class Builder {
 		OnBoardDebugger deb = new OnBoardDebugger(testGND);
 		testGND.addTemperatureSensor(new TempSensorArduino("DS18B20", "TMP",
 				deb));
+		// testGND.addTiltSensor(new TiltSensorSim("TLTECO", "ALL"));
 		testGND.addHumiditySensor(new HumidSensorArduino("HGMECO", "HMD", deb));
 		testGND.addDipSensor(new ShockSensorArduino("TLTECO", "ALL", deb));
 
@@ -94,21 +95,21 @@ public class Builder {
 	 * Add Sensor To Water Station
 	 */
 	public void addWaterSensor() {
-		OnBoardDebugger deb = new OnBoardDebugger(testWTR);
-
-		testWTR.addTemperatureSensor(new TempSensorArduino("DS18B20", "TMP"));
-		testWTR.addLevelSensor(new LevelSensorArduino("WSECO", "WL",deb));
-		testWTR.addSpeedSensor(new SpeedSensorArduino("HC020K", "SPD"));
+		
+		testWTR.addTemperatureSensor(new TempSensorSim("DS18B20", "TMP"));
+		testWTR.addLevelSensor(new LevelSensorSim("WSECO", "WL"));
+		testWTR.addSpeedSensor(new SpeedSensorSim("HC020K", "SPD"));
 	}
 
 	public static void main(String[] args) throws InterruptedException {
 		
 		Builder bl = new Builder();
-//		bl.CreateMonitor("Air"I37057), 3);
-		bl.CreateMonitor("Air", "AirStationSmartCityLAB",
-				new Coordinate(44.139307, 12.237057), 3);
+		bl.CreateMonitor("Air", "SimulatedAirStationCesena", new Coordinate(
+				44.139307, 12.237057), 3);
+//		bl.CreateMonitor("Ground", "SimulatedGroundStationCesena",
+//				new Coordinate(44.139307, 12.237057), 2);
 
-//		bl.CreateMonitor("Water", "WaterStationCesena",
+//		bl.CreateMonitor("Water", "SimulatedWaterStationCesena",
 //				new Coordinate(44.139307, 12.237057), 1);
 
 		//

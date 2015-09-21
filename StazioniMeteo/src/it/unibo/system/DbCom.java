@@ -49,7 +49,6 @@ public class DbCom {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			db = DriverManager.getConnection(path + dbName + "?user=" + user
 					+ "&password=" + password);
-			System.out.println("db_connected");
 		} catch (InstantiationException | IllegalAccessException
 				| ClassNotFoundException e) {
 			e.printStackTrace();
@@ -322,7 +321,6 @@ public class DbCom {
 			ClassNotFoundException, IllegalAccessException,
 			InstantiationException, IOException {
 		DbCom c = new DbCom();
-		
 
 	}
 }

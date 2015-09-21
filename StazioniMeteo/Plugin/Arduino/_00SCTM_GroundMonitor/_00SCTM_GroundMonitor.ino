@@ -10,7 +10,7 @@ int levelPin = A0;
 
 //INIT VAR
 int levelvalue = 0;
-int count;
+int count = 0;
 
 
 //SerialCom
@@ -21,10 +21,9 @@ boolean stringComplete = false;  // whether the string is complete
 void setup()
 {
   Serial.begin(9600);
-  count=0;
   //temp SETUP
   pinMode (DS18B20_Pin, INPUT);
-  pinMode(shockPin, INPUT);
+  //pinMode(shockPin, INPUT);
   //Interrupt 0 is digital pin 2, so that is where the IR detector is connected
   //Triggers on FALLING (change from HIGH to LOW)
   attachInterrupt(0, shockCount, CHANGE);
@@ -90,7 +89,7 @@ float getTemp() {
 }
 
 //count shock of station
-int getShock()
+float getShock()
 {
   //Don't process interrupts during calculations
   detachInterrupt(0);
@@ -98,7 +97,7 @@ int getShock()
   int old = count;
   count = 0;
   attachInterrupt(0, shockCount, CHANGE);
-  return (int)old;
+  return (float)old;
 }
 
 // Get Ground Humidity
@@ -114,7 +113,7 @@ int getHumidity() {
 //Function that count # of shock
 void shockCount()
 {
-  count=count+1;
+  count++;
 }
 
 //Use for handler

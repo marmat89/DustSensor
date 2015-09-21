@@ -76,27 +76,7 @@ float getSpeed()
   rpmcount = 0;
   //Restart the interrupt processing
   attachInterrupt(0, rpm_fun, CHANGE);
-  float speedKM;
-  if (rpm<250){
-    speedKM = map(rpm,0, 199, 0, 10);
-  }
-  if (rpm >= 250 && rpm < 450){
-    speedKM = map(rpm,250, 450, 10, 20);
-  }
-    if (rpm >= 450 && rpm <600){
-    speedKM = map(rpm,450, 600, 20, 30);
-  }
-      if (rpm >= 600 && rpm <700){
-    speedKM = map(rpm,600, 700, 30, 40);
-  }
-        if (rpm >= 700 && rpm <775){
-    speedKM = map(rpm,700,775, 40, 50);
-  }
-          if (rpm >= 775){//non affidabile
-    speedKM = map(rpm,775, 1400, 50, 100);
-  }
- 
-  return (float)speedKM;
+  return (float)rpm;
 }
 
 void rpm_fun()

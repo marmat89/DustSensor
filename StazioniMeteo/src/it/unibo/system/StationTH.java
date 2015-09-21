@@ -31,7 +31,7 @@ public class StationTH implements Runnable {
 	public void ThreadCreation(StationRPI s) {
 		this.s = s;
 		Configurator conf = new Configurator("conf.xml", "configuration");
-		 UpdeteTime=(conf.getTagValueINT("UPDATE")*1000);
+		 UpdeteTime=(conf.getTagValueINT("DEBUG")*1000);
 		// THREAD finder Start
 		Thread thUpdate = new Thread(this);
 		thUpdate.start();
@@ -48,8 +48,8 @@ public class StationTH implements Runnable {
 				if (s.monitorUpdates() != null) {
 					sm.sendMes(s, s.mesList);
 				}
-				sm.turnOffConnection();
 				Thread.sleep(UpdeteTime);
+				sm.turnOffConnection();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
