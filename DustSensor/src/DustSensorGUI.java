@@ -7,7 +7,6 @@ import java.awt.BorderLayout;
 
 import javax.swing.JButton;
 
-import org.jfree.ui.RefineryUtilities;
 
 import Charts.GraficoALinea;
 
@@ -65,7 +64,7 @@ public class DustSensorGUI {
 	
 
 		final GraficoALinea demo = new GraficoALinea(
-				"Grafici al gusto di caffè");
+				"Grafici al gusto di caffï¿½");
 		int count=7;
 		while(true)
 		{

@@ -305,3 +305,19 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !ENTRY org.apache.log4j 2 0 2015-09-22 00:43:53.552
 !MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'it.unibo.xtext.robot.ui' and 'it.unibo.xtext.highRobot.spec.ui' register a content parser for 'ddr'
 
+!SESSION 2015-09-22 00:45:52.160 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=it_IT
+Framework arguments:  -product org.eclipse.epp.package.standard.product -keyring /Users/marmat89/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.standard.product -keyring /Users/marmat89/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-09-22 00:46:23.695
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-22 00:46:24.312
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.emf.ecore 2 0 2015-09-22 00:46:24.323
+!MESSAGE Both 'it.unibo.xtext.robot.ui' and 'it.unibo.xtext.highRobot.spec.ui' register an extension parser for 'ddr'
