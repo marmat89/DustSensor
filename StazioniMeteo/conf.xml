@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<DB_USER>airdb</DB_USER>
+	<DB_PASS>airdbsctm</DB_PASS>
+	<DB_PATH>jdbc:mysql://137.204.72.6/</DB_PATH>
+	<DB_NAME>airdb</DB_NAME>	
+	
+	<SERIAL_PORT>/dev/tty.usbmodemfd131</SERIAL_PORT>
+	<DATA_RATE>9600</DATA_RATE>
+	<UPDATE>1</UPDATE>
+	<DEBUG>60</DEBUG>
+</configuration> 
